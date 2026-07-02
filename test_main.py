@@ -164,7 +164,10 @@ def test_login(new_user,page):
     time.sleep(3)
     
 def test_incorrect_password_or_email(page):
-       
+    
+    
+    page_login_btn = page.locator("//a[text()=' Signup / Login']")
+    page_login_btn.click()   
     page.locator('[data-qa="login-email"]').fill('zatvka@gmail.com')
     page.locator('[data-qa="login-password"]').fill('maks')
     page.locator('[data-qa="login-button"]').click()
